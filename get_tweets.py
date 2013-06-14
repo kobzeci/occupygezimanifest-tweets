@@ -27,7 +27,6 @@ def find_latest_csv():
             continue
 
         # Skip CSV files not matching the pattern
-        m = re.match(r'occupygezi-([0-9]{14}).csv', f)
         if not m:
             continue
 
@@ -59,7 +58,7 @@ def get_latest_id():
         return 0
 
     # Read CSV file to get latest tweet ID
-    with open('occupygezi-%s.csv' % date.strftime(DATE_FORMAT)) as f:
+    with open('cevapver-%s.csv' % date.strftime(DATE_FORMAT)) as f:
         tweets = csv.reader(f, quoting=csv.QUOTE_NONNUMERIC)
         latest_id = 0
         for tweet in tweets:
